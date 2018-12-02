@@ -12,10 +12,6 @@ func GetMembers() echo.HandlerFunc {
 		members := []db.Member{}
 		db := db.GetConnection()
 		data := db.Find(&members)
-		// members := []member{
-		// 	{ID: 1, Name: "ユーザー1"},
-		// 	{ID: 2, Name: "ユーザー2"},
-		// }
 		return c.JSON(http.StatusOK, data)
 	}
 }
