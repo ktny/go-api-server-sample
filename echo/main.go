@@ -5,12 +5,13 @@ import (
 	"fmt"
 
 	"github.com/ktny/go-api-server-sample/echo/config"
+	"github.com/ktny/go-api-server-sample/echo/db"
 	"github.com/ktny/go-api-server-sample/echo/route"
 )
 
 func main() {
 	setConfig()
-
+	db.Init()
 	c := config.Config.Database
 	fmt.Printf("DBユーザー::%s", c.User)
 
